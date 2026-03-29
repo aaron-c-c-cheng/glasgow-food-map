@@ -1,6 +1,10 @@
-# Open Food Map
+# Glasgow Food Map
 
-This project provides tools to collect, analyze, and visualize restaurant data. It is designed to be modular and extensible, allowing you to easily add support for new cities.
+> **Based on [Open Food Map](https://github.com/laurencleek/open_food_map) by [Lauren Leek](https://github.com/laurencleek)** — tools to collect, analyze, and visualize restaurant data for any city.
+
+This project maps Glasgow's restaurant scene — collecting data via the Google Maps API, scoring restaurants for hidden gems, and generating an interactive filterable map by cuisine.
+
+It is a fork/extension of the **Open Food Map** framework, adapted for Glasgow.
 
 ## Features
 
@@ -129,15 +133,6 @@ If you've improved the code or want to share a sample dataset for a new city, pl
 
 [MIT License](LICENSE)
 
-## Contact
+## Credits
 
-Created by **Lauren leek**.
-
-If you have any questions or suggestions, please feel free to contact me at [laurencaroline.leek@eui.eu](mailto:laurencaroline.leek@eui.eu).
-
-## Support
-
-If you enjoyed this project or found it helpful, consider supporting my work!
-
-*   [☕ Buy me a coffee](https://buymeacoffee.com/laurenleek)
-*   [📝 Subscribe to my Substack](https://laurenleek.substack.com)
+This project is built on top of [Open Food Map](https://github.com/laurencleek/open_food_map), created by [Lauren Leek](https://github.com/laurencleek). The core data collection, analysis, and visualization framework comes from that project — huge thanks to Lauren for open-sourcing it.
