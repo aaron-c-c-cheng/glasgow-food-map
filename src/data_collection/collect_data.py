@@ -52,7 +52,7 @@ LON_MAX = args.lon_max
 # Grid & query params
 GRID_STEP_KM = args.grid_step
 RADIUS_M     = args.radius
-PLACE_TYPE   = "restaurant"
+PLACE_TYPES  = ["restaurant", "cafe"]
 
 # Paths
 OUTDIR       = pathlib.Path(args.output_dir)
@@ -885,11 +885,16 @@ def main():
         if STOP: break
         lat, lon = grid[i]
         print(f"[info] ({i+1}/{total_points}) Nearby lat={lat:.5f}, lon={lon:.5f}")
-        try:
-            results = places_nearby_all_pages(lat, lon, RADIUS_M, PLACE_TYPE)
-        except Exception as e:
-            print(f"[warn] Nearby failed at grid {i}: {e}")
-            save_progress(i, total_points); time.sleep(1.0); continue
+        results = []
+        for place_type in PLACE_TYPES:
+            try:
+                type_results = places_nearby_all_pages(lat, lon, RADIUS_M, place_type)
+                results.extend(type_results)
+            except Exception as e:
+                print(f"[warn] Nearby failed at grid {i} for type '{place_type}': {e}")
+                time.sleep(1.0)
+        if not results:
+            save_progress(i, total_points); continue
 
         new_base_rows = []
         new_ids = []

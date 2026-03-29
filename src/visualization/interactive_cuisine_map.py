@@ -587,6 +587,12 @@ html_content = f"""
             <input type="checkbox" id="independentToggle" onchange="updateMap()">
             <div class="toggle-switch"></div>
         </label>
+
+        <label class="toggle-container">
+            <span class="toggle-label">Cafes Only</span>
+            <input type="checkbox" id="cafesOnlyToggle" onchange="updateMap()">
+            <div class="toggle-switch"></div>
+        </label>
         
         {'''<div style="margin-bottom: 15px;">
             <label style="display:block; font-size:12px; font-weight:500; margin-bottom:5px;">Borough</label>
@@ -887,6 +893,7 @@ html_content = f"""
         var searchText = document.getElementById('searchInput').value.toLowerCase();
         var showUnderrated = document.getElementById('underratedToggle').checked;
         var onlyIndependents = document.getElementById('independentToggle').checked;
+        var cafesOnly = document.getElementById('cafesOnlyToggle').checked;
         
         document.getElementById('ratingVal').innerText = minRating.toFixed(1);
         document.getElementById('reviewVal').innerText = minReviews;
@@ -900,6 +907,10 @@ html_content = f"""
             if (onlyIndependents) {{
                 // is_chain: 1 => chain, 0 => independent
                 if (r.is_chain === 1) return;
+            }}
+
+            if (cafesOnly) {{
+                if (r.cuisine_group.toLowerCase() !== "cafe") return;
             }}
 
             if (showUnderrated) {{
