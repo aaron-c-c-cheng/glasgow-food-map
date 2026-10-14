@@ -1,10 +1,10 @@
 # Glasgow Food Map
 
-> **Based on [Open Food Map](https://github.com/laurencleek/open_food_map) by [Lauren Leek](https://github.com/laurencleek)** — tools to collect, analyze, and visualize restaurant data for any city.
+> **Based on [Open Food Map](https://github.com/laurencleek/open_food_map) by [Lauren Leek](https://github.com/laurencleek).** Lauren built the framework that collects, analyses and maps restaurant data for any city. This is my own version, with a few tweaks that make it more useful to me, such as adding cafes.
 
-This project maps Glasgow's restaurant scene — collecting data via the Google Maps API, scoring restaurants for hidden gems, and generating an interactive filterable map by cuisine.
+This project maps Glasgow's restaurant and cafe scene. It collects data with the Google Places API, scores places to find hidden gems, and generates an interactive map you can filter by cuisine.
 
-It is a fork/extension of the **Open Food Map** framework, adapted for Glasgow.
+The data collection, "underrated" scoring model and map design all come from Lauren's project. My changes are listed under [What I built](#what-i-built) below.
 
 ### 👉 [Open the live Glasgow map](https://aaron-c-c-cheng.github.io/glasgow-food-map/glasgow_restaurants_interactive.html)
 
@@ -12,7 +12,7 @@ It is a fork/extension of the **Open Food Map** framework, adapted for Glasgow.
 
 ## What I built
 
-Starting from Lauren Leek's Open Food Map, I:
+Building on Lauren Leek's Open Food Map, I:
 
 - **Collected Glasgow data**: ran a grid search over Greater Glasgow with the Google Places API, giving 2,062 places and 1,439 restaurants after cleaning and analysis.
 - **Added cafe support**: the collector now searches for cafes as well as restaurants, and the map has a **Cafes Only** filter.
