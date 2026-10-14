@@ -6,7 +6,33 @@ This project maps Glasgow's restaurant scene — collecting data via the Google 
 
 It is a fork/extension of the **Open Food Map** framework, adapted for Glasgow.
 
-**Live maps:** https://aaron-c-c-cheng.github.io/glasgow-food-map/ (Glasgow map: [`output/glasgow_restaurants_interactive.html`](output/glasgow_restaurants_interactive.html))
+### 👉 [Open the live Glasgow map](https://aaron-c-c-cheng.github.io/glasgow-food-map/glasgow_restaurants_interactive.html)
+
+![Glasgow Food Map screenshot](docs/glasgow_screenshot.png)
+
+## What I built
+
+Starting from Lauren Leek's Open Food Map, I:
+
+- **Collected Glasgow data**: ran a grid search over Greater Glasgow with the Google Places API, giving 2,062 places and 1,439 restaurants after cleaning and analysis.
+- **Added cafe support**: the collector now searches for cafes as well as restaurants, and the map has a **Cafes Only** filter.
+- **Published it as a website**: GitHub Pages hosts an index of every city map at [aaron-c-c-cheng.github.io/glasgow-food-map](https://aaron-c-c-cheng.github.io/glasgow-food-map/).
+- **Fixed the basemap**: switched to Esri's keyless light-grey tiles after the CARTO tiles began requiring an API key.
+- **Contributed upstream**: offered the Glasgow map back to the original project ([laurencleek/open_food_map#13](https://github.com/laurencleek/open_food_map/pull/13)).
+
+## Rebuild the Glasgow map yourself
+
+You don't need an API key; the Glasgow data is included in `data/sample/`:
+
+```bash
+git clone https://github.com/aaron-c-c-cheng/glasgow-food-map.git
+cd glasgow-food-map
+pip install -r requirements.txt
+python src/analysis/analyze_underrated.py --city-name glasgow --input-dir data/sample
+python src/visualization/interactive_cuisine_map.py --city-name glasgow
+```
+
+This writes `output/glasgow_restaurants_interactive.html`, which you can open in any browser.
 
 ## Features
 
