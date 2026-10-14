@@ -6,7 +6,7 @@ This project maps Glasgow's restaurant scene — collecting data via the Google 
 
 It is a fork/extension of the **Open Food Map** framework, adapted for Glasgow.
 
-**Live maps:** https://acheng10.github.io/glasgow-food-map/ (Glasgow map: [`output/glasgow_restaurants_interactive.html`](output/glasgow_restaurants_interactive.html))
+**Live maps:** https://aaron-c-c-cheng.github.io/glasgow-food-map/ (Glasgow map: [`output/glasgow_restaurants_interactive.html`](output/glasgow_restaurants_interactive.html))
 
 ## Features
 
@@ -49,7 +49,7 @@ If the Places API is not enabled, the collector may run to completion but produc
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/ACheng10/glasgow-food-map.git
+    git clone https://github.com/aaron-c-c-cheng/glasgow-food-map.git
     cd glasgow-food-map
     ```
 
